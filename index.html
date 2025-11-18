@@ -6,7 +6,50 @@
     <title>Home | Complete Digital Solutions</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* --- Header --- */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e75c9;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+            .site-header .logo {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+            .nav-links a.active {
+                text-decoration: underline;
+            }
+
+        /* --- Hamburger --- */
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
         /* --- Card-style links for sections --- */
+        .content {
+            padding: 100px 20px 40px; /* account for fixed header */
+        }
+
         .card-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -60,13 +103,52 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
+        /* --- Footer --- */
+        .site-footer {
+            background: #1e75c9;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #1e75c9;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px;
+                border-radius: 0 0 0 8px;
+            }
+
+                .nav-links.show {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    margin: 10px 0;
+                }
+        }
     </style>
 </head>
 <body>
 
     <header class="site-header">
         <div class="logo">Complete Digital Solutions</div>
-        <nav>
+        <button class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+        <nav class="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="whats-changing.html">What's Changing</a>
             <a href="4k-info.html">4K Info</a>
@@ -124,12 +206,12 @@ const messages = [
 let index = 0;
 
 function showToast(msg) {
-  const toast = document.createElement('div');
-  toast.textContent = msg;
-  toast.className = 'toast-popup';
-  document.body.appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 100);
-  setTimeout(() => toast.remove(), 4000);
+  //const toast = document.createElement('div');
+  //toast.textContent = msg;
+  //toast.className = 'toast-popup';
+  //document.body.appendChild(toast);
+  //setTimeout(() => toast.classList.add('show'), 100);
+  //setTimeout(() => toast.remove(), 4000);
 }
 
 // Rotate messages every 5 seconds
@@ -137,6 +219,14 @@ setInterval(() => {
   showToast(messages[index]);
   index = (index + 1) % messages.length;
 }, 5000);
+
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
     </script>
 
 </body>

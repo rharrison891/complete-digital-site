@@ -1,30 +1,32 @@
-/* Global resets */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* ============================
+   General Styles
+============================ */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fa;
-    color: #222;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
 }
 
-/* HEADER */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================
+   Header
+============================ */
 .site-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    background: #1e75c9;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    align-items: center;
+    background: #1e75c9;
     color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
     .site-header .logo {
@@ -32,88 +34,145 @@ body {
         font-size: 1.2rem;
     }
 
-    .site-header nav a {
-        color: white;
-        margin-left: 20px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: opacity 0.2s;
-    }
-
-        .site-header nav a:hover,
-        .site-header nav a.active {
-            opacity: 0.8;
-        }
-
-/* FOOTER */
-.site-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background: #1e75c9;
-    color: white;
+.nav-links {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+    gap: 20px;
 }
 
-/* CONTENT AREA */
+    .nav-links a {
+        color: white;
+        font-weight: bold;
+    }
+
+        .nav-links a.active {
+            text-decoration: underline;
+        }
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* ============================
+   Content
+============================ */
 .content {
-    padding: 80px 20px 70px;
-    max-width: 900px;
+    padding: 100px 20px 40px; /* account for fixed header */
+    max-width: 1200px;
     margin: auto;
 }
 
-/* Headings */
-h1 {
-    color: #1e75c9;
-    text-align: center;
-    margin-bottom: 30px;
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
 }
 
-/* ACCORDION STYLES */
-.accordion-item {
-    background: #ffffff;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 1px solid #d3e2f2;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.accordion-header {
-    padding: 15px 20px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    background: #f5f9ff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-    .accordion-header:hover {
-        background: #ebf3ff;
-    }
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
+.card {
     background: white;
-    padding: 0 20px;
-    transition: max-height 0.3s ease;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-    .accordion-content p,
-    .accordion-content ul {
-        padding: 15px 0;
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-.accordion-icon {
+.card-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.card-title {
     font-weight: bold;
-    font-size: 1.3rem;
-    color: #1e75c9;
+    margin-bottom: 5px;
+}
+
+/* ============================
+   Footer
+============================ */
+.site-footer {
+    background: #1e75c9;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ============================
+   Toast Popup
+============================ */
+.toast-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1e75c9;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 2000;
+}
+
+    .toast-popup.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* ============================
+   Mobile Responsive
+============================ */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1e75c9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 0 0 0 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+        .nav-links.show {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .nav-links a {
+            margin: 10px 0;
+            color: white;
+        }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
 }
