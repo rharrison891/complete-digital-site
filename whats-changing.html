@@ -1,72 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>What's Changing | Complete Digital Solutions</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        /* Page-specific styling */
-        .content {
-            padding: 100px 20px 80px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h1 {
-            color: #1e75c9;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* Accordion Styling */
-        .accordion-item {
-            background: #ffffff;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            border: 1px solid #d3e2f2;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .accordion-header {
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            background: #f5f9ff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-            .accordion-header:hover {
-                background: #ebf3ff;
-            }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            background: white;
-            padding: 0 20px;
-            transition: max-height 0.3s ease;
-        }
-
-            .accordion-content p,
-            .accordion-content ul {
-                padding: 15px 0;
-            }
-
-        .accordion-icon {
-            font-weight: bold;
-            font-size: 1.3rem;
-            color: #1e75c9;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="site-header">
         <div class="logo">Complete Digital Solutions</div>
         <nav>
@@ -78,122 +19,42 @@
         </nav>
     </header>
 
-    <!-- CONTENT -->
     <div class="content">
         <h1>What's Changing in Digital TV</h1>
 
-        <!-- 1: Freeview HD & DVB-T2 -->
+        <!-- Example Accordion Item -->
         <div class="accordion-item">
             <div class="accordion-header">
-                Freeview HD & DVB-T2 Updates
+                Example Section
                 <span class="accordion-icon">+</span>
             </div>
             <div class="accordion-content">
-                <p>Freeview continues to shift more channels to HD broadcasting. Many SD channels are gradually being phased out, and the platform is moving toward DVB-T2 transmission for improved efficiency and higher-quality HD content.</p>
-                <p><strong>Key changes:</strong></p>
-                <ul>
-                    <li>More HD channels replacing SD equivalents</li>
-                    <li>Older non-HD TVs may require a Freeview HD box</li>
-                    <li>New multiplex restructuring to improve coverage</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 2: Streaming Services Growth -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Growth of Streaming Services
-                <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Streaming has rapidly become the preferred way to watch TV. Major platforms like Netflix, Amazon Prime Video, Disney+, Apple TV+, and Paramount+ continue to expand with 4K HDR as standard on many devices.</p>
-                <p><strong>Trends for 2025:</strong></p>
-                <ul>
-                    <li>Higher adoption of smart TVs</li>
-                    <li>More 4K and HDR content availability</li>
-                    <li>Sharper compression for improved streaming quality</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 3: 8K Technology -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                8K TVs – The Next Big Step
-                <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>8K televisions are becoming more affordable, but widespread 8K content isn’t here yet. Upscaling technology in new TVs can dramatically improve HD and 4K material, making 8K sets useful even now.</p>
-                <p><strong>What’s happening:</strong></p>
-                <ul>
-                    <li>Stronger 8K upscaling using AI processing</li>
-                    <li>Growing support in high-end streaming devices</li>
-                    <li>Future-focused investment as broadcasters test 8K</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 4: Satellite Updates -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Satellite (Freesat & Sky) Updates
-                <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Freesat and Sky continue improving HD channels and simplifying regional services. Sky Glass and Sky Stream have reduced reliance on dishes, with streaming-based viewing becoming the new norm.</p>
-                <ul>
-                    <li>More HD channel migration</li>
-                    <li>Sky Glass / Stream replacing traditional satellite kits</li>
-                    <li>Improved channel organisation and region detection</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 5: TV Licensing & ITVX/BBC -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                BBC, ITVX & General Platform Changes
-                <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>The BBC and ITV continue to push more services online. BBC iPlayer offers higher bitrate HD content, while ITVX provides a modern streaming alternative to the older ITV Hub.</p>
-                <ul>
-                    <li>Better HD quality on iPlayer</li>
-                    <li>ITVX replacing legacy apps on most smart TVs</li>
-                    <li>More connected services integrated directly into TV menus</li>
-                </ul>
+                <p>This is a stub for the accordion content. Real info will go here.</p>
             </div>
         </div>
 
     </div>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
-        <p>&copy; 2025 Complete Digital Solutions. All rights reserved.</p>
+        &copy; 2025 Complete Digital Solutions. All rights reserved.
     </footer>
 
-    <!-- Accordion Script -->
     <script>
-        const items = document.querySelectorAll('.accordion-item');
-
-        items.forEach(item => {
-            const header = item.querySelector('.accordion-header');
-            const content = item.querySelector('.accordion-content');
-            const icon = item.querySelector('.accordion-icon');
-
-            header.addEventListener('click', () => {
-                const isOpen = content.style.maxHeight;
-
-                // Close all items first
-                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "+");
-
-                if (!isOpen) {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.textContent = "–";
-                }
-            });
-        });
+const items = document.querySelectorAll('.accordion-item');
+items.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    const content = item.querySelector('.accordion-content');
+    const icon = item.querySelector('.accordion-icon');
+    header.addEventListener('click', () => {
+        const isOpen = content.style.maxHeight;
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+        document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "+");
+        if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.textContent = "–";
+        }
+    });
+});
     </script>
 
 </body>
