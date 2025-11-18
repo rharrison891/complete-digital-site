@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home | Complete Digital Solutions</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Card-style links for sections --- */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- Toast popup --- */
+        .toast-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1e75c9;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 2000;
+        }
+
+            .toast-popup.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
 </head>
 <body>
 
@@ -21,12 +77,67 @@
 
     <div class="content">
         <h1>Welcome to Complete Digital Solutions</h1>
-        <p>This is the home page. Content and styling will be added here.</p>
+        <p>Discover refurbished laptops, latest tech updates, and expert digital solutions for home and business.</p>
+
+        <!-- Card links to other pages -->
+        <div class="card-container">
+            <div class="card" onclick="location.href='whats-changing.html'">
+                <img src="images/trends.png" alt="Trends" class="card-icon">
+                <div class="card-title">What's Changing</div>
+                <div>Latest trends in digital TV and tech updates.</div>
+            </div>
+
+            <div class="card" onclick="location.href='4k-info.html'">
+                <img src="images/4k-info.png" alt="4K Info" class="card-icon">
+                <div class="card-title">4K Information</div>
+                <div>Learn about 4K resolution, HDR, and future display tech.</div>
+            </div>
+
+            <div class="card" onclick="location.href='4k-options.html'">
+                <img src="images/4k-options.png" alt="4K Options" class="card-icon">
+                <div class="card-title">4K Options</div>
+                <div>Devices and platforms to enjoy 4K content at home.</div>
+            </div>
+
+            <div class="card" onclick="location.href='hd-freeview.html'">
+                <img src="images/hd-freeview.png" alt="HD & Freeview" class="card-icon">
+                <div class="card-title">HD & Freeview</div>
+                <div>Setup guides and info for Freeview HD channels.</div>
+            </div>
+        </div>
     </div>
 
     <footer class="site-footer">
         &copy; 2025 Complete Digital Solutions. All rights reserved.
     </footer>
+
+    <!-- Toast messages -->
+    <script>
+const messages = [
+  "Our customers love our service!",
+  "Fast delivery and excellent support!",
+  "Top-rated laptops for your needs!",
+  "Highly recommended refurbished devices!",
+  "Quality you can trust, prices you'll love!"
+];
+
+let index = 0;
+
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.textContent = msg;
+  toast.className = 'toast-popup';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 100);
+  setTimeout(() => toast.remove(), 4000);
+}
+
+// Rotate messages every 5 seconds
+setInterval(() => {
+  showToast(messages[index]);
+  index = (index + 1) % messages.length;
+}, 5000);
+    </script>
 
 </body>
 </html>
