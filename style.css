@@ -237,7 +237,7 @@ body {
     }
 
         .accordion-content ul li::before {
-            content: "&#9656;";
+            content: "\25BA"; /* right-pointing triangle */
             position: absolute;
             left: 0;
             top: 0;
