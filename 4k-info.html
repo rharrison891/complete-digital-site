@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>4K Information | Complete Digital Solutions</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -24,5 +23,14 @@
     </div>
 
     <div id="footer"></div>
+    <script>
+        fetch("/partials/header.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("header").outerHTML = html);
+
+        fetch("/partials/footer.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("footer").outerHTML = html);
+    </script>
 </body>
 </html>

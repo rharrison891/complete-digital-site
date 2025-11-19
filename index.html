@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home | Complete Digital Solutions</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
 </head>
 <body>
 
@@ -45,16 +44,14 @@
 
 
 
-    <!-- Toast messages -->
         <script>
-            // Hamburger menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
+        fetch("/partials/header.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("header").outerHTML = html);
 
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('show');
-            });
+        fetch("/partials/footer.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("footer").outerHTML = html);
         </script>
-
     </body>
 </html>

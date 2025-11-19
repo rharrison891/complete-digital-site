@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>4K Options | Complete Digital Solutions</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
 </head>
 <body>
 
@@ -22,9 +21,18 @@
         <p>This page will later include details on subscriptions, device compatibility, and recommended viewing setups.</p>
     </div>
 
-    
+
     <div id="footer"></div>
-    
+
+    <script>
+        fetch("/partials/header.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("header").outerHTML = html);
+
+        fetch("/partials/footer.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("footer").outerHTML = html);
+    </script>
 
 </body>
 </html>
