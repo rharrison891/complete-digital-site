@@ -188,9 +188,14 @@ body {
     }
 
 .accordion-icon {
-    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s ease;
     font-size: 1.2rem;
-    transition: transform 0.2s ease;
+}
+
+/* When parent accordion-item is open, rotate the icon */
+.accordion-item.open .accordion-icon {
+    transform: rotate(90deg); /* points down */
 }
 
 /* Content hidden by default */

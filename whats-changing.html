@@ -17,7 +17,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 Freely - The New Way to Watch Live TV
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>Freely is the biggest upgrade to free-to-air UK television in years. Instead of relying on a traditional aerial, Freely delivers live channels over the internet. It combines live TV, catch-up, and on-demand content into one simple interface and is built into many new smart TVs.</p>
@@ -34,7 +34,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 Cloud Broadcasting - Freeview Goes Modern
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>Much of the UK's Freeview broadcasting infrastructure is now processed in the cloud. This improves reliability, flexibility, and allows faster updates to channels and regional variations.</p>
@@ -51,7 +51,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 Updated Channel Lists & The Need to Retune
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>Freeview regularly updates its channel lineup throughout the year, adding new channels, renaming existing ones, or occasionally removing services. A simple retune ensures your TV has the latest content.</p>
@@ -67,7 +67,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 Possible Reduction of Freeview HD Channels
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>Some Freeview HD channels may be reduced as focus shifts toward internet-delivered content. This is gradual and viewers will have plenty of notice.</p>
@@ -83,7 +83,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 UK Media Bill - Streaming Gets Regulated
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>The UK Media Bill ensures streaming platforms follow similar quality and safety standards as traditional broadcasters.</p>
@@ -100,7 +100,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 AI-Powered Personalised TV
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>AI is being used to personalise recommendations and improve content discovery on smart TVs and streaming platforms.</p>
@@ -117,7 +117,7 @@
         <div class="accordion-item">
             <div class="accordion-header">
                 4K, 8K & AI Upscaling - Future-Proof TV
-                <span class="accordion-icon">+</span>
+                <span class="accordion-icon">&#9656;</span>
             </div>
             <div class="accordion-content">
                 <p>Modern TVs use AI upscaling to improve HD/4K content, making 8K TVs useful even now.</p>
@@ -144,9 +144,9 @@
             header.addEventListener('click', () => {
                 const isOpen = content.style.maxHeight;
                 document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "+");
+                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "&#9656;");
                 if (!isOpen) {
-                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.maxHeight = content.scrollHeight &#9656; "px";
                     icon.textContent = "–";
                 }
             });
