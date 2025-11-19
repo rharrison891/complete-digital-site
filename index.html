@@ -44,46 +44,17 @@
     <div id="footer"></div>
 
 
-    
+
     <!-- Toast messages -->
-    <script>
+        <script>
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
 
-const messages = [
-  "Our customers love our service!",
-  "Fast delivery and excellent support!",
-  "Top-rated laptops for your needs!",
-  "Highly recommended refurbished devices!",
-  "Quality you can trust, prices you'll love!"
-];
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        </script>
 
-let index = 0;
-
-
-
-
-function showToast(msg) {
-  //const toast = document.createElement('div');
-  //toast.textContent = msg;
-  //toast.className = 'toast-popup';
-  //document.body.appendChild(toast);
-  //setTimeout(() => toast.classList.add('show'), 100);
-  //setTimeout(() => toast.remove(), 4000);
-}
-
-// Rotate messages every 5 seconds
-setInterval(() => {
-  showToast(messages[index]);
-  index = (index + 1) % messages.length;
-}, 5000);
-
-// Hamburger menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
-    </script>
-
-</body>
+    </body>
 </html>
