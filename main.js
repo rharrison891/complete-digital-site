@@ -15,53 +15,60 @@ const Templates = {
 
     footer: `
         <div class="site-footer">
-            <p>
-                Complete Digital Solutions Ltd is an independent company.
-                To view Complete Digital Solutions Ltd's full terms and conditions please click <a href="terms.html">here</a>
-                <br>
-                Copyright &copy; 2010 Complete digital solutions Ltd. All Rights Reserved. Registered in England Reg. No. 07197430
-            </p>
+            <div class="footer-collapsible">
+                <div class="footer-preview">
+                    Complete Digital Solutions Ltd is an independent company.
+                    <span class="footer-toggle">&#9650;</span>
+                </div>
+                <div class="footer-full">
+                    To view Complete Digital Solutions Ltd's full terms and conditions please click <a href="terms.html">here</a>
+                    <br>
+                    Copyright &copy; 2010 Complete Digital Solutions Ltd. All Rights Reserved. Registered in England Reg. No. 07197430
+                </div>
+            </div>
         </div>
     `
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll("#main-nav a");
-    const currentPage = location.pathname.split("/").pop(); // e.g., "index.html"
+    // Inject header/footer
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    if (header) header.innerHTML = Templates.header;
+    if (footer) footer.innerHTML = Templates.footer;
 
+    // Active nav link
+    const navLinks = document.querySelectorAll("#main-nav a");
+    const currentPage = location.pathname.split("/").pop();
     navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href");
-        if (linkPage === currentPage) {
+        if (link.getAttribute("href") === currentPage) {
             link.classList.add("active");
         }
     });
 
-    const header = document.querySelector("header");
-    if (header) header.innerHTML = Templates.header;
-
-    const footer = document.querySelector("footer");
-    if (footer) footer.innerHTML = Templates.footer;
-
-    // Hamburger menu
+    // Hamburger toggle
     const ham = document.getElementById("hamburger");
     const nav = document.getElementById("main-nav");
-
     if (ham && nav) {
-        ham.addEventListener("click", () => {
-            nav.classList.toggle("nav-open");
+        ham.addEventListener("click", () => nav.classList.toggle("nav-open"));
+    }
+
+    // Footer collapsible toggle (mobile)
+    const footerCollapsible = document.querySelector(".footer-collapsible");
+    const footerToggle = document.querySelector(".footer-toggle");
+    if (footerCollapsible && footerToggle) {
+        footerToggle.addEventListener("click", () => {
+            footerCollapsible.classList.toggle("open");
         });
     }
 
-    // Scroll effect for header/footer
+    // Scroll effect for header/footer shadows and darken bg
     const content = document.querySelector(".content");
     const headerEl = document.querySelector(".site-header");
     const footerEl = document.querySelector(".site-footer");
-
     if (content && headerEl && footerEl) {
         content.addEventListener("scroll", () => {
             const scrollTop = content.scrollTop;
-
-            // Subtle shadow and darken background on scroll
             if (scrollTop > 5) {
                 headerEl.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
                 footerEl.style.boxShadow = "0 -4px 12px rgba(0,0,0,0.3)";
@@ -75,4 +82,39 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Accordion toggle
+    const items = document.querySelectorAll('.accordion-item');
+    items.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
+        header.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+            document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+            document.querySelectorAll('.accordion-icon').forEach(ic => ic.style.transform = 'rotate(0deg)');
+            document.querySelectorAll('.accordion-content ul li').forEach(li => {
+                li.style.opacity = 0;
+                li.style.transform = 'translateX(-10px)';
+            });
+
+            // Open clicked
+            if (!isOpen) {
+                item.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + "px";
+
+                const lis = content.querySelectorAll('ul li');
+                lis.forEach((li, idx) => {
+                    li.style.transitionDelay = `${0.05 + idx * 0.05}s`;
+                    li.style.opacity = 1;
+                    li.style.transform = 'translateX(0)';
+                });
+
+                if (icon) icon.style.transform = 'rotate(90deg)';
+            }
+        });
+    });
 });
