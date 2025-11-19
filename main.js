@@ -3,11 +3,6 @@
         <div class="site-header">
             <div class="logo">Complete Digital Solutions</div>
 
-            <div class="header-contact">
-                <a href="tel:+441234567890" class="contact-icon">📱</a>
-                <a href="mailto:info@completedigital.co.uk" class="contact-icon">📧</a>
-            </div>
-
             <div id="hamburger" class="hamburger">&#9776;</div>
             <nav id="main-nav" class="nav-closed">
                 <a href="index.html">Home</a>
@@ -42,6 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const footer = document.querySelector("footer");
     if (header) header.innerHTML = Templates.header;
     if (footer) footer.innerHTML = Templates.footer;
+
+    // Floating contact widget
+    const contactWidget = document.createElement("div");
+    contactWidget.className = "contact-widget";
+    contactWidget.innerHTML = `
+        <a href="mailto:info@completedigital.co.uk" title="Email us">📧</a>
+        <a href="tel:+441234567890" title="Call us">📱</a>
+    `;
+    document.body.appendChild(contactWidget);
 
     // Active nav link
     const navLinks = document.querySelectorAll("#main-nav a");
