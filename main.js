@@ -26,6 +26,16 @@ const Templates = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("#main-nav a");
+    const currentPage = location.pathname.split("/").pop(); // e.g., "index.html"
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute("href");
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+
     const header = document.querySelector("header");
     if (header) header.innerHTML = Templates.header;
 

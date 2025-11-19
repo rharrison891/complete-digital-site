@@ -41,6 +41,37 @@ body {
         font-weight: bold;
     }
 
+/* Header nav link with sliding underline */
+#main-nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.2s ease;
+}
+
+    #main-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background: #ffd700; /* gold underline */
+        transition: width 0.25s ease;
+    }
+
+    #main-nav a:hover::after,
+    #main-nav a.active::after {
+        width: 100%; /* full width on hover or active */
+    }
+
+    #main-nav a.active {
+        font-weight: bold;
+        color: #ffd700; /* highlight active link */
+    }
+
 /* Hamburger */
 .hamburger {
     font-size: 1.8rem;
