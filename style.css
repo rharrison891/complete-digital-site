@@ -216,6 +216,41 @@ body {
     transition: background 0.2s ease;
 }
 
+/* Modern accordion list items */
+.accordion-content ul {
+    padding-left: 1.2rem; /* space for custom bullets */
+    margin: 0.5rem 0;
+}
+
+    .accordion-content ul li {
+        list-style: none; /* remove default bullets */
+        position: relative;
+        padding-left: 1.2rem; /* space for bullet */
+        margin-bottom: 0.5rem; /* spacing between items */
+        font-size: 0.95rem; /* slightly smaller than paragraph */
+        line-height: 1.5; /* comfortable line spacing */
+        color: #333; /* dark text for contrast */
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+        /* Custom bullet using pseudo-element */
+        .accordion-content ul li::before {
+            content: "•"; /* bullet character */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0055a5; /* match theme blue */
+            font-weight: bold;
+            transform: scale(1.2); /* slightly bigger bullet */
+            transition: color 0.2s ease;
+        }
+
+        /* Optional hover highlight */
+        .accordion-content ul li:hover {
+            color: #0055a5; /* text changes to theme color on hover */
+            transform: translateX(2px); /* subtle slide effect */
+        }
+
     .accordion-header:hover {
         background: #e0e0e0;
     }
