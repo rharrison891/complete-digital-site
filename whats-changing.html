@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header"></div>
+    <header class="site-header">
+        <div class="logo">Complete Digital Solutions</div>
+        <button class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+        <nav class="nav-links">
+            <a href="index.html" >Home</a>
+            <a href="whats-changing.html" class="active">What's Changing</a>
+            <a href="4k-info.html">4K Info</a>
+            <a href="4k-options.html">4K Options</a>
+            <a href="hd-freeview.html">HD & Freeview</a>
+        </nav>
+    </header>
 
 
     <div class="content">
@@ -133,17 +143,11 @@
     </div>
 
 
-    <div id="footer"></div>
-    <script>
-        fetch("/partials/header.html")
-            .then(r => r.text())
-            .then(html => document.getElementById("header").outerHTML = html);
-
-        fetch("/partials/footer.html")
-            .then(r => r.text())
-            .then(html => document.getElementById("footer").outerHTML = html);
-    </script>
-
+    <footer class="site-footer">
+        Complete Digital Solutions Ltd is an independent company. To view Complete Digital Solutions Ltd’s full terms and conditions please click here
+        Copyright © 2010 Complete digital solutions Ltd. All Rights Reserved. Registered in England Reg. No. 07197430
+    </footer>
+    
     <script>
 const items = document.querySelectorAll('.accordion-item');
 items.forEach(item => {
