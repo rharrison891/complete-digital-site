@@ -1,7 +1,13 @@
-const Templates = {
+﻿const Templates = {
     header: `
         <div class="site-header">
             <div class="logo">Complete Digital Solutions</div>
+
+            <div class="header-contact">
+                <a href="tel:+441234567890" class="contact-icon">📱</a>
+                <a href="mailto:info@completedigital.co.uk" class="contact-icon">📧</a>
+            </div>
+
             <div id="hamburger" class="hamburger">&#9776;</div>
             <nav id="main-nav" class="nav-closed">
                 <a href="index.html">Home</a>
