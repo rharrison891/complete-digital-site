@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactWidget = document.createElement("div");
     contactWidget.className = "contact-widget";
     contactWidget.innerHTML = `
-        <a href="mailto:info@completedigital.co.uk" title="Email us">📧</a>
-        <a href="tel:+441234567890" title="Call us">📱</a>
+        <a href="mailto:info@completedigital.co.uk" title="Email us">&#9993;</a>
+        <a href="tel:+441234567890" title="Call us">&#128222;</a>
     `;
     document.body.appendChild(contactWidget);
 
