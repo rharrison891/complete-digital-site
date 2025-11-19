@@ -149,21 +149,21 @@
     </footer>
     
     <script>
-const items = document.querySelectorAll('.accordion-item');
-items.forEach(item => {
-    const header = item.querySelector('.accordion-header');
-    const content = item.querySelector('.accordion-content');
-    const icon = item.querySelector('.accordion-icon');
-    header.addEventListener('click', () => {
-        const isOpen = content.style.maxHeight;
-        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-        document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "+");
-        if (!isOpen) {
-            content.style.maxHeight = content.scrollHeight + "px";
-            icon.textContent = "–";
-        }
-    });
-});
+        const items = document.querySelectorAll('.accordion-item');
+        items.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-icon');
+            header.addEventListener('click', () => {
+                const isOpen = content.style.maxHeight;
+                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "+");
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.textContent = "–";
+                }
+            });
+        });
     </script>
 
 </body>

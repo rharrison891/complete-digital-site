@@ -2,9 +2,7 @@ const Templates = {
     header: `
         <div class="site-header">
             <div class="logo">Complete Digital Solutions</div>
-
             <div id="hamburger" class="hamburger">&#9776;</div>
-
             <nav id="main-nav" class="nav-closed">
                 <a href="index.html">Home</a>
                 <a href="whats-changing.html">What's Changing</a>
@@ -23,24 +21,19 @@ const Templates = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    // --- Inject Header ---
     const header = document.querySelector("header");
     if (header) header.innerHTML = Templates.header;
 
-    // --- Inject Footer ---
     const footer = document.querySelector("footer");
     if (footer) footer.innerHTML = Templates.footer;
 
-    // --- Hamburger Menu Setup ---
+    // Hamburger menu
     const ham = document.getElementById("hamburger");
     const nav = document.getElementById("main-nav");
 
     if (ham && nav) {
         ham.addEventListener("click", () => {
             nav.classList.toggle("nav-open");
-            nav.classList.toggle("nav-closed");
         });
     }
-
 });
