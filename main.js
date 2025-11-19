@@ -18,7 +18,7 @@ const Templates = {
             <p>
                 Complete Digital Solutions Ltd is an independent company.
                 To view Complete Digital Solutions Ltd's full terms and conditions please click <a href="terms.html">here</a>
-                <br/>
+                <br>
                 Copyright &copy; 2010 Complete digital solutions Ltd. All Rights Reserved. Registered in England Reg. No. 07197430
             </p>
         </div>
