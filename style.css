@@ -116,8 +116,10 @@ body {
 }
 
 @media (max-width:768px) {
+    .footer-collapsible {
+        font-size: 0.7rem;
+    }
     .footer-collapsible .footer-full {
-        font-size:0.7rem;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
