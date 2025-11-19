@@ -15,7 +15,8 @@ const Templates = {
 
     footer: `
         <div class="site-footer">
-            <p>© 2025 Complete Digital Solutions</p>
+            Complete Digital Solutions Ltd is an independent company.
+                    To view Complete Digital Solutions Ltd’s full terms and conditions please click <a href="terms.html">here</a>
         </div>
     `
 };
