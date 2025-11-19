@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("onload", (event) => {
   fetch("/partials/header.html")
         .then(r => r.text())
         .then(html => document.getElementById("header").outerHTML = html);
