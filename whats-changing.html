@@ -140,14 +140,18 @@
         items.forEach(item => {
             const header = item.querySelector('.accordion-header');
             const content = item.querySelector('.accordion-content');
-            const icon = item.querySelector('.accordion-icon');
+
             header.addEventListener('click', () => {
                 const isOpen = content.style.maxHeight;
+
+                // Close all
                 document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = "&#9656;");
+                document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+
+                // Open clicked one
                 if (!isOpen) {
-                    content.style.maxHeight = content.scrollHeight &#9656; "px";
-                    icon.textContent = "–";
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    item.classList.add('open');
                 }
             });
         });
