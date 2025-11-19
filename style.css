@@ -5,6 +5,147 @@
     padding: 0;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Header ===== */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0055a5;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+    .site-header .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+/* Hamburger */
+.hamburger {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none; /* hidden on desktop */
+}
+
+/* Navigation */
+#main-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+    #main-nav a {
+        padding: 0.5rem 0;
+        transition: color 0.2s;
+    }
+
+        #main-nav a:hover {
+            color: #ffd700;
+        }
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #main-nav {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0055a5;
+        display: none;
+    }
+
+        #main-nav.nav-open {
+            display: flex;
+        }
+
+        #main-nav.nav-closed {
+            display: none;
+        }
+
+        #main-nav a {
+            padding: 1rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+}
+
+/* ===== Content ===== */
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Card container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background: #0055a5;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+}
+
+    .site-footer p {
+        font-size: 0.9rem;
+    }
+
+/* ===== Reset / Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
