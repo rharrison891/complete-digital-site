@@ -41,8 +41,8 @@ body {
         font-weight: bold;
     }
 
-.content subhead {
-    padding-top:1rem;
+.subhead {
+    padding-top:2rem;
     padding-bottom:1rem;
 }
 
