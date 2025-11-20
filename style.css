@@ -41,6 +41,23 @@ body {
         font-weight: bold;
     }
 
+.content ul {
+    padding-left: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+    .content ul li {
+        content: "\25BA";
+        list-style: none;
+        position: relative;
+        padding-left: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #333;
+        opacity: 1;
+    }
+
 /* Floating contact widget */
 .contact-widget {
     position: fixed;
