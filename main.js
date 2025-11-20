@@ -124,6 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 if (icon) icon.style.transform = 'rotate(90deg)';
+
+                // ⭐ Auto-scroll into view when opening
+                const scrollContainer = document.querySelector('.content');
+                if (scrollContainer) {
+                    setTimeout(() => {
+                        item.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                    }, 200); // slight delay so expansion animates first
+                }
             }
         });
     });
