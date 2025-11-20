@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Style to match contact widget
     Object.assign(cookieWidget.style, {
         position: "fixed",
-        bottom: "10rem",
+        bottom: "7rem",
         left: "1rem",
         width: "3rem",
         height: "3rem",
@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     tooltip.textContent = "No cookies on this site";
     Object.assign(tooltip.style, {
         position: "absolute",
-        bottom: "110%",
-        left: "50%",
+        bottom: "100%",
+        left: "100%",
         transform: "translateX(-50%)",
         background: "#00428a",
         color: "#fff",
