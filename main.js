@@ -47,6 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.body.appendChild(contactWidget);
 
+    // Cookie widget
+    const cookieWidget = document.createElement("div");
+    cookieWidget.className = "cookie-indicator";
+    cookieWidget.title = "No cookies on this site";
+    cookieWidget.textContent = "🍪";
+    document.body.appendChild(cookieWidget);
+
     // Active nav link
     const navLinks = document.querySelectorAll("#main-nav a");
     const currentPage = location.pathname.split("/").pop();
