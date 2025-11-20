@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.assign(tooltip.style, {
         position: "absolute",
         bottom: "100%",
-        left: "100%",
+        left: "150%",
         transform: "translateX(-50%)",
         background: "#00428a",
         color: "#fff",
