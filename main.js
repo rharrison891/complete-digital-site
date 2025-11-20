@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
         boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
         cursor: "pointer",
         transition: "transform 0.2s ease, background 0.2s ease",
-        zIndex: "1100"
+        zIndex: "1100",
+        opacity:"0.2"
     });
 
     // Create tooltip
@@ -94,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add click toggle
     cookieWidget.addEventListener("click", () => {
         tooltip.style.opacity = tooltip.style.opacity === "1" ? "0" : "1";
+        cookieWidget.style.opacity=cookieWidget.style.opacity==="1"?"0.2":"1";
         cookieWidget.style.transform = tooltip.style.opacity === "1" ? "scale(1.2)" : "scale(1)";
     });
 
