@@ -50,8 +50,57 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cookie widget
     const cookieWidget = document.createElement("div");
     cookieWidget.className = "cookie-indicator";
-    cookieWidget.title = "No cookies on this site";
     cookieWidget.textContent = "🍪";
+
+    // Style to match contact widget
+    Object.assign(cookieWidget.style, {
+        position: "fixed",
+        bottom: "10rem",
+        left: "1rem",
+        width: "3rem",
+        height: "3rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#0055a5",
+        color: "#fff",
+        fontSize: "1.5rem",
+        borderRadius: "50%",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+        cursor: "pointer",
+        transition: "transform 0.2s ease, background 0.2s ease",
+        zIndex: "1100"
+    });
+
+    // Create tooltip
+    const tooltip = document.createElement("div");
+    tooltip.textContent = "No cookies on this site";
+    Object.assign(tooltip.style, {
+        position: "absolute",
+        bottom: "110%",
+        left: "50%",
+        transform: "translateX(-50%)",
+        background: "#00428a",
+        color: "#fff",
+        padding: "0.5rem 0.75rem",
+        borderRadius: "5px",
+        fontSize: "0.75rem",
+        whiteSpace: "nowrap",
+        opacity: "0",
+        pointerEvents: "none",
+        transition: "opacity 0.2s"
+    });
+
+    // Add click toggle
+    cookieWidget.addEventListener("click", () => {
+        tooltip.style.opacity = tooltip.style.opacity === "1" ? "0" : "1";
+        cookieWidget.style.transform = tooltip.style.opacity === "1" ? "scale(1.2)" : "scale(1)";
+    });
+
+    // Append tooltip to widget
+    cookieWidget.appendChild(tooltip);
+
+    // Add to page
     document.body.appendChild(cookieWidget);
 
     // Active nav link

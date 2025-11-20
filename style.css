@@ -379,17 +379,3 @@ body {
     .accordion-item.open ul li:nth-child(5) {
         transition-delay: 0.25s;
     }
-
-.cookie-indicator {
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-    font-size: 1.5rem;
-    cursor: default;
-    z-index: 1100;
-    transition: transform 0.2s ease;
-}
-
-    .cookie-indicator:hover {
-        transform: scale(1.2);
-    }
