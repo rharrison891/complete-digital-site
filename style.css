@@ -41,6 +41,11 @@ body {
         font-weight: bold;
     }
 
+.content subhead {
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
 .content h1 {
     padding-bottom:1rem;
 }
