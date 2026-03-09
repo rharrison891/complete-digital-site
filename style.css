@@ -385,3 +385,12 @@ body {
     .accordion-item.open ul li:nth-child(5) {
         transition-delay: 0.25s;
     }
+
+.product-card {
+    display: block;
+    background: #0055a5;
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+}
