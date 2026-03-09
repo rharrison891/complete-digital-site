@@ -1,88 +1,16 @@
 {
   "products": [
     {
-      "id": "toshiba-portege-z30",
-      "shortDesc": "Toshiba Dynabook Portege",
-      "longDesc": "Dynabook Toshiba Portege Z30-C-16H business ultrabook with a 13.3 inch Full HD display, Intel Core i5-6200U, 4GB RAM and a 256GB SSD (upgraded). Lightweight magnesium design with full-size ports and UK QWERTY keyboard",
-      "price": 140,
-      "images": [
-        "images/toshiba-portege-z30.webp"
-      ],
-      "specs": {
-        "cpu": "Intel I5-6200U",
-        "ram": "4GB",
-        "storage": "256GB SSD"
-      }
+      "name": "High Gain Aerial",
+      "description": "Description",
+      "image": "images/firetv.jpg"
+      "price": 90
     },
     {
-      "id": "Acer-Chromebook-11",
-      "shortDesc": "Acer Chromebook 11",
-      "longDesc": "Acer Chromebook 11 CB3-132-11DC in Stone Blue featuring an 11.6″ HD screen, Intel Atom x5 processor, 2GB RAM and 16GB eMMC storage. Runs fast and secure Google Chrome OS with access to Google apps and Play Store. Lightweight refurbished Chromebook ideal for students and everyday online use.",
-      "price": 90,
-      "images": [
-        "images/acer-chromebook-11.webp"
-      ],
-      "specs": {
-        "cpu": "Intel Atom x5",
-        "ram": "2GB",
-        "storage": "16GB eMMC"
-      }
+      "name": "Professional Installation",
+      "description": "Description of installation",
+      "image": "images/roku.jpg"
+      "price": 65
     },
-    {
-      "id": "hp-chromebook-14",
-      "shortDesc": "HP Chromebook 14",
-      "longDesc": "Refurbished HP Chromebook 14-db0003na with a 14 inch HD anti-glare display, AMD A4-9120, 4GB RAM and 32GB eMMC. Ideal for browsing, Google Docs, email and streaming on Chrome OS.",
-      "price": 120,
-      "images": [
-        "images/hp-chromebook-14.webp"
-      ],
-      "specs": {
-        "cpu": "AMD A4-9120",
-        "ram": "4GB",
-        "storage": "32GB eMMC"
-      }
-    },
-    {
-      "id": "hp-elite-745",
-      "shortDesc": "HP Elite 745",
-      "longDesc": "HP EliteBook 745 G4, 14-inch Full HD 1920x1080 Display, AMD A10-8730B 2.40GHz (up to 3.30GHz), 8GB DDR4 RAM, 256GB SSD, AMD Radeon R5 Graphics, Wi-Fi (802.11a/b/g/n Wireless), 10/100 Mbps LAN, Bluetooth 4.0, WebCam, 1x USB Type C, 2x USB 3.0, HDMI, Genuine Windows 10 Professional 64Bit preinstalled + Recovery Tools (to repair or reinstall Windows back to factory settings or to create a system recovery USB Flash Drive), pre-installed with ESET Internet Security, this ensures your digital life is safeguarded, giving you peace of mind while browsing, shopping, or working online.",
-      "price": 149.99,
-      "images": [
-        "images/hp-elite-745.webp"
-      ],
-      "specs": {
-        "cpu": "AMD A10-8730B",
-        "ram": "8GB",
-        "storage": "256GB SSD"
-      }
-    },
-    {
-      "id": "lenovo-thinkpad-l490",
-      "shortDesc": "Lenovo Thinkpad L490",
-      "longDesc": "Lenovo ThinkPad L490 14 inch Full HD laptop with Intel Core i5-8365U, 8 GB RAM and 256 GB PCIe NVMe SSD. Features: HDMI, USB-C, USB 3.1, RJ-45 Ethernet, 4-in-1 card reader (SD/MMC/SDHC/SDXC), Wi-Fi + Fibocom L830-EB 4G LTE module, 720 p Webcam. Supplied with Windows 11 Pro preinstalled.",
-      "price": 180,
-      "images": [
-        "images/lenovo-thinkpad-l490.webp"
-      ],
-      "specs": {
-        "cpu": "Intel I5-8365U",
-        "ram": "8GB",
-        "storage": "256GB PCIe NVMe SSD"
-      }
-    },
-    {
-      "id": "microsoft-surface-4",
-      "shortDesc": "Microsoft Surface 4",
-      "longDesc": "Microsoft Surface Laptop 4 in Black (Model 1951) featuring Intel Core i7-1185G7, 16GB RAM and a 256GB SSD. A powerful, portable choice for productivity, email, browsing and multitasking.",
-      "price": 360,
-      "images": [
-        "images/microsoft-surface-4.webp"
-      ],
-      "specs": {
-        "cpu": "Intel i7-1185G7",
-        "ram": "16GB",
-        "storage": "256GB SSD"
-      }
-    } 
   ]
 }
