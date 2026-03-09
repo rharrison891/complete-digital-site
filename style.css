@@ -385,16 +385,28 @@ body {
         transition-delay: 0.25s;
     }
 
+.products {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .product-card {
     display: block;
-    background: #0055a5;
-    color: #fff;
+    background: var(--card);
     padding: 15px;
     border-radius: 12px;
     text-decoration: none;
+    color: var(--text);
 }
 
 .product-card img {
-    height: 200px;
-    width: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 10px;
 }
