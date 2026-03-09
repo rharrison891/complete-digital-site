@@ -12,7 +12,7 @@
     <header></header>
 
     <div class="content">
-        <div class="products">
+        <div class="productList">
     <!-- JS will populate this from products.json -->
         </div>
 
@@ -22,6 +22,40 @@
     <footer></footer>
 
     <script src="main.js"></script>
-    <script src="js/products.js"></script>
+    <script>
+
+        async function loadProducts() {
+    
+            try {
+        
+                const response = await fetch('./products.json');
+                const data = await response.json();
+        
+                const container = document.getElementById("productList");
+        
+                data.products.forEach(p => {
+        
+                    const card = document.createElement("a");
+                    card.className = "product-card";
+                    card.href = "product.html?id=" + p.id;
+        
+                    card.innerHTML = `
+                        <img src="${p.images[0]}" alt="${p.shortDesc}">
+                        <h3>${p.shortDesc}</h3>
+                        <p class="price">£${p.price}</p>
+                    `;
+        
+                    container.appendChild(card);
+        
+                });
+        
+            } catch (err) {
+                console.error("Product load failed", err);
+            }
+        }
+    
+        loadProducts();
+
+    </script>
 </body>
 </html>
