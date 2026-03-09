@@ -23,8 +23,7 @@ body {
 /* ===== Header ===== */
 .site-header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0;    left: 0;
     width: 100%;
     height: 60px;
     background: #0055a5;
@@ -395,7 +394,7 @@ body {
     text-decoration: none;
 }
 
-.product-car img {
+.product-card img {
     height: 200px;
     width: auto;
 }
