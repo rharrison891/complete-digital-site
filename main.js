@@ -1,7 +1,9 @@
 ﻿const Templates = {
     header: `
         <div class="site-header">
-            <div class="logo">Complete Digital Solutions</div>
+            <a href="index.html" class="logo">
+                <img src="images/cds-logo.webp" alt="Complete Digital Solutions Ltd">
+            </a>
 
             <div id="hamburger" class="hamburger">&#9776;</div>
             <nav id="main-nav" class="nav-closed">
