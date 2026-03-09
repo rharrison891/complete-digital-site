@@ -415,6 +415,7 @@ body {
 .product-card img {
     border-radius: 8px;
     margin-bottom: 10px;
+   max-height:150px;
 }
 
 .price {
