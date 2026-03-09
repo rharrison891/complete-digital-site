@@ -1,36 +1,17 @@
-async function loadProduct() {
-
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-
-    const response = await fetch('./products.json');
-    const data = await response.json();
-
-    const product = data.products.find(p => p.id === id);
-
-    if (!product) {
-        document.body.innerHTML = "<h1>Product not found</h1>";
-        return;
-    }
-
-    document.getElementById("title").textContent = product.shortDesc;
-    document.getElementById("image").src = product.images[0];
-    document.getElementById("description").textContent = product.longDesc;
-    document.getElementById("price").textContent = "£" + product.price;
-    const emailBtn = document.getElementById("emailBtn");
-    emailBtn.href="mailto:info@laptronicsolutions.co.uk?subject=Enquiry about " + encodeURIComponent(product.shortDesc);
-
-    const specList = document.getElementById("specList");
-
-    for (const key in product.specs) {
-
-        const li = document.createElement("li");
-
-        li.textContent = key.toUpperCase() + ": " + product.specs[key];
-
-        specList.appendChild(li);
-    }
-
-}
-
-loadProduct();
+fetch('products.json')
+  .then(res => res.json())
+  .then(products => {
+    const container = document.querySelector('.products');
+    products.forEach(p => {
+      const card = document.createElement('a');
+      card.className = 'product-card';
+      card.href = '#'; // or link to details page
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <div class="price">${p.price}</div>
+      `;
+      container.appendChild(card);
+    });
+  });
