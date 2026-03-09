@@ -45,6 +45,7 @@ body {
 .site-header .logo img {
     height: 40px;
     width: auto;
+    image-rendering: -webkit-optimize-contrast;
 }
 .subhead {
     padding-top:2rem;
