@@ -1,16 +1,14 @@
-{
-  "products": [
-    {
-      "name": "High Gain Aerial",
-      "description": "Description",
-      "image": "images/firetv.jpg"
-      "price": 90
-    },
-    {
-      "name": "Professional Installation",
-      "description": "Description of installation",
-      "image": "images/roku.jpg"
-      "price": 65
-    },
-  ]
-}
+[
+  {
+    "name": "4K Installation",
+    "description": "Complete 4K setup and calibration.",
+    "price": "From £350",
+    "image": "images/4k_install.webp"
+  },
+  {
+    "name": "HD Freeview Setup",
+    "description": "Quick HD setup for freeview services.",
+    "price": "From £120",
+    "image": "images/hd_freeview.webp"
+  }
+]
