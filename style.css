@@ -394,3 +394,8 @@ body {
     border-radius: 12px;
     text-decoration: none;
 }
+
+.product-car img {
+    height: 200px;
+    width: auto;
+}
