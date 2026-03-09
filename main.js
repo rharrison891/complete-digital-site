@@ -12,6 +12,7 @@
                 <a href="4k-info.html">4K Info</a>
                 <a href="4k-options.html">4K Options</a>
                 <a href="hd-freeview.html">HD & Freeview</a>
+                <a href="products.html">Products & Services</a>
             </nav>
         </div>
     `,
